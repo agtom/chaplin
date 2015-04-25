@@ -34,7 +34,7 @@ app.get('/giphysearch', function(req,res) {
 
 
 app.post('/giphyresults', function(req,res){
-	request(url + req.body.search + "&api_key=" + apiKey, function(err, response, body)
+	request(url + req.body.search, function(err, response, body)
 		{var results = (JSON.parse(body));
 		for(i = 0; i < results.data.length; i++) {
 		console.log(results.data[i].images.fixed_height.url)
